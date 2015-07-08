@@ -1,0 +1,17 @@
+{
+  "name": "CoderzStarterKit",
+  "version": "0.0.0",
+  "private": true,
+  "authors": [
+    "Edoardo Tenani <edoardo.tenani@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/vendor",
+    "test",
+    "tests"
+  ]
+}

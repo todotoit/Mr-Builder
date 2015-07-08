@@ -1,0 +1,22 @@
+default: []
+
+build:
+  - 'clean:dist'
+  # - 'svgs'
+  - 'newer:copy:dist'
+  - 'newer:useminPrepare'
+  - 'newer:concat:generated'
+  - 'newer:autoprefixer'
+  - 'newer:cssmin:generated'
+  - 'newer:uglify:generated'
+  - 'filerev:dist'
+  - 'newer:usemin'
+  - 'newer:processhtml'
+  - 'htmlmin'
+  - 'CsvToL10nJson:dist'
+  - 'clean:tmp' # comment for debug
+
+dev:
+  - 'clean:devLocales'
+  - 'CsvToL10nJson:dev'
+  - 'browserSync:dev'
