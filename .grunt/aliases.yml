@@ -1,22 +1,39 @@
 default: []
 
 build:
+  # required, cleans public/ folder
   - 'clean:dist'
+  # if you need svg-store
   # - 'svgs'
+  # copy relevant files from app/ to public/
   - 'newer:copy:dist'
+  # run useminPrepare on app/index.html
   - 'newer:useminPrepare'
+  # concat css and js files
   - 'newer:concat:generated'
+  # run autoprefixer on concat css file
   - 'newer:autoprefixer'
+  # minify css ( with sourcemaps )
   - 'newer:cssmin:generated'
+  # minify js ( with sourcemaps )
   - 'newer:uglify:generated'
+  # ref files inside public/
   - 'filerev:dist'
+  # perform useming
   - 'newer:usemin'
+  # process public/index.html
   - 'newer:processhtml'
-  - 'htmlmin'
+  # minify public/index.html
+  - 'htmlmin:dist'
+  # creates json from csv inside resources/locales
   - 'CsvToL10nJson:dist'
-  - 'clean:tmp' # comment for debug
+  # clean .tmp folder, comment for easier debug
+  - 'clean:tmp'
 
 dev:
+  # clean development environment from generated files
   - 'clean:dev'
+  # convert csv to locale json files
   - 'CsvToL10nJson:dev'
+  # run browsersync
   - 'browserSync:dev'

@@ -63,6 +63,9 @@ This task currently performs this operations:
 - convert csv files in `resources/locales` to json in `public/locales`
 - cleanup
 
+Please refer to `build` task declaration in `.grunt/aliases.yml` for further
+info.
+
 ## Missing steps & other issues
 
 Open issues! :) This is and will remain a work in progress, so if you have any
