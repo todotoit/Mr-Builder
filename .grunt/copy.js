@@ -8,8 +8,24 @@ module.exports = function (grunt, options) {
   return {
 
     dist: {
-      src:  path.join(options.folders.app, 'index.html'),
-      dest: path.join(options.folders.dist, 'index.html')
+      files: [
+        {
+          src:  path.join(options.folders.app, 'index.html'),
+          dest: path.join(options.folders.dist, 'index.html')
+        },
+        {
+          expand: true,
+          cwd: options.folders.app,
+          src:  path.join('assets', 'imgs', '*.{jpg,png,bmp,gif}'),
+          dest: path.join(options.folders.dist)
+        },
+        {
+          expand: true,
+          cwd: options.folders.app,
+          src:  path.join('assets', 'fonts', '*'),
+          dest: path.join(options.folders.dist)
+        }
+      ]
     },
 
   };
