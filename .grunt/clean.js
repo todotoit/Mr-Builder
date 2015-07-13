@@ -10,7 +10,9 @@ module.exports = function (grunt, options) {
     dist: options.folders.dist,
     tmp:  options.folders.tmp,
 
-    devLocales: path.join(options.folders.app, 'locales')
+    dev: [
+      path.join(options.folders.app, 'locales/*.json'),
+    ]
 
   };
 

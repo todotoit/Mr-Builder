@@ -17,6 +17,6 @@ build:
   - 'clean:tmp' # comment for debug
 
 dev:
-  - 'clean:devLocales'
+  - 'clean:dev'
   - 'CsvToL10nJson:dev'
   - 'browserSync:dev'
