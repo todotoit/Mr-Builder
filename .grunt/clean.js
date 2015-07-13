@@ -12,6 +12,8 @@ module.exports = function (grunt, options) {
 
     dev: [
       path.join(options.folders.app, 'locales/*.json'),
+      path.join(options.folders.app, 'assets/icons.svg'),
+      path.join(options.folders.app, 'assets/icons-demo.html'),
     ]
 
   };

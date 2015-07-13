@@ -3,8 +3,8 @@ default: []
 build:
   # required, cleans public/ folder
   - 'clean:dist'
-  # if you need svg-store
-  # - 'svgs'
+  # svgstore creation
+  - 'svgstore:dist'
   # copy relevant files from app/ to public/
   - 'newer:copy:dist'
   # run useminPrepare on app/index.html
@@ -33,6 +33,8 @@ build:
 dev:
   # clean development environment from generated files
   - 'clean:dev'
+  # svgstore creation
+  - 'svgstore:dev'
   # convert csv to locale json files
   - 'CsvToL10nJson:dev'
   # run browsersync
