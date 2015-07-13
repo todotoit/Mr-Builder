@@ -6,23 +6,23 @@ build:
   # svgstore creation
   - 'svgstore:dist'
   # copy relevant files from app/ to public/
-  - 'newer:copy:dist'
+  - 'copy:dist'
   # run useminPrepare on app/index.html
-  - 'newer:useminPrepare'
+  - 'useminPrepare'
   # concat css and js files
-  - 'newer:concat:generated'
+  - 'concat:generated'
   # run autoprefixer on concat css file
-  - 'newer:autoprefixer'
+  - 'autoprefixer'
   # minify css ( with sourcemaps )
-  - 'newer:cssmin:generated'
+  - 'cssmin:generated'
   # minify js ( with sourcemaps )
-  - 'newer:uglify:generated'
+  - 'uglify:generated'
   # ref files inside public/
   - 'filerev:dist'
   # perform useming
-  - 'newer:usemin'
+  - 'usemin'
   # process public/index.html
-  - 'newer:processhtml'
+  - 'processhtml'
   # minify public/index.html
   - 'htmlmin:dist'
   # creates json from csv inside resources/locales
