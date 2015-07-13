@@ -1,6 +1,6 @@
 {
   "name": "ProjectName",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Project Description",
   "private": true,
   "main": "public/index.html",
