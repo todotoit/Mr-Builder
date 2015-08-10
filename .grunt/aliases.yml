@@ -3,6 +3,8 @@ default: []
 build:
   - 'clean:dist'
   # - 'svgs'
+  # - 'ngtemplates' # for angular app with partials, check the src for paths config
+  # - 'ngAnnotate' # for angular app, check the source
   - 'newer:copy:dist'
   - 'newer:useminPrepare'
   - 'newer:concat:generated'
@@ -20,3 +22,6 @@ dev:
   - 'clean:devLocales'
   - 'CsvToL10nJson:dev'
   - 'browserSync:dev'
+
+test:
+  - 'ngAnnotate'
