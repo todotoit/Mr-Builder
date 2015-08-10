@@ -1,26 +1,45 @@
 default: []
 
 build:
+  # required, cleans public/ folder
   - 'clean:dist'
-  # - 'svgs'
   # - 'ngtemplates' # for angular app with partials, check the src for paths config
   # - 'ngAnnotate' # for angular app, check the source
-  - 'newer:copy:dist'
-  - 'newer:useminPrepare'
-  - 'newer:concat:generated'
-  - 'newer:autoprefixer'
-  - 'newer:cssmin:generated'
-  - 'newer:uglify:generated'
+  # svgstore creation
+  - 'svgstore:dist'
+  # copy relevant files from app/ to public/
+  - 'copy:dist'
+  # run useminPrepare on app/index.html
+  - 'useminPrepare'
+  # concat css and js files
+  - 'concat:generated'
+  # run autoprefixer on concat css file
+  - 'autoprefixer'
+  # minify css ( with sourcemaps )
+  - 'cssmin:generated'
+  # minify js ( with sourcemaps )
+  - 'uglify:generated'
+  # ref files inside public/
   - 'filerev:dist'
-  - 'newer:usemin'
-  - 'newer:processhtml'
-  - 'htmlmin'
+  # perform useming
+  - 'usemin'
+  # process public/index.html
+  - 'processhtml'
+  # minify public/index.html
+  - 'htmlmin:dist'
+  # creates json from csv inside resources/locales
   - 'CsvToL10nJson:dist'
-  - 'clean:tmp' # comment for debug
+  # clean .tmp folder, comment for easier debug
+  - 'clean:tmp'
 
 dev:
-  - 'clean:devLocales'
+  # clean development environment from generated files
+  - 'clean:dev'
+  # svgstore creation
+  - 'svgstore:dev'
+  # convert csv to locale json files
   - 'CsvToL10nJson:dev'
+  # run browsersync
   - 'browserSync:dev'
 
 test:

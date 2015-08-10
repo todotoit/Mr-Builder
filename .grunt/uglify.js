@@ -8,12 +8,11 @@ module.exports = function (grunt, options) {
   return {
 
     options: {
-      // sourceMap: true,
-      // sourceMapIn: function(uglifySource) {
-      //   console.log(uglifySource)
-      //   return uglifySource + '.map';
-      // },
-      // sourceMapIncludeSources: true
+      sourceMap: true,
+      sourceMapIn: function(uglifySource) {
+        console.log(uglifySource)
+        return uglifySource + '.map';
+      },
     },
     generated: {
       mangle:    true,  // invert for debug

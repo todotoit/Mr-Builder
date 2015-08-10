@@ -7,6 +7,10 @@ module.exports = function (grunt, options) {
   // this is the grunt configuration object
   return {
 
+    options: {
+      // see CsvToL10nJson module options
+      usePrefix: false
+    },
     dist: {
       src: path.join(options.folders.resources, 'locales/*.csv'),
       dest: path.join(options.folders.dist, 'locales'),

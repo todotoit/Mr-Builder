@@ -1,6 +1,6 @@
 {
   "name": "ProjectName",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Project Description",
   "private": true,
   "main": "public/index.html",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "browser-sync": "^2.7.13",
     "grunt": "^0.4.5",
-    "grunt-CsvToL10nJson": "git://github.com/endorama/grunt-CsvToL10nJson.git",
+    "grunt-CsvToL10nJson": "git://github.com/endorama/grunt-CsvToL10nJson.git#v0.3.0",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "*",
     "grunt-browser-sync": "*",
