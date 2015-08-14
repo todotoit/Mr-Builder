@@ -25,6 +25,12 @@ module.exports = function(grunt) {
 
 
   //
+  // Load package.json
+  //
+  var pkg = grunt.file.readJSON('package.json');
+
+
+  //
   // Default option object
   //
   var appData = {
