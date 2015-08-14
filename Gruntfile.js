@@ -1,5 +1,54 @@
 'use strict';
 
+/*
+ * # Gruntfile
+ *
+ * This Gruntfile is supercharged with lots of cool stuff.
+ * ( opinionated opinion by me of course :P )
+ *
+ * - It uses load-grunt-config to include all configurations splitted in single
+ *   files.
+ * - It uses time-grunt to compute running time for tasks, with specific analytics
+ *   on time spent on loading them and on executing them.
+ * - It permits overrides of configuration by project and by single user.
+ *   ( USER below is the username of the logged in user of the system ).
+ * - It permits defining and overriding custom task in a clean and terse way.
+ *
+ *
+ * Take care when overriding tasks and configs: assure to modify only the right
+ * behaviour, to prevent side effects.
+ *
+ * ===>    TIP: **Are you lost with too many tasks?? Use `grunt tasks`**    <===
+ *
+ * ## Task configuration
+ *
+ * Task configuration are loaded from ( ordered by priority ):
+ *  - lib/grunt/USER/{{task}}.js
+ *  - lib/grunt/{{task}}.js
+ *  - .grunt/config/{{task}}.js
+ *
+ * Files inside these folders should comply with load-grunt-config docs
+ *
+ * ## Custom tasks
+ *
+ * This Gruntfile will include custom tasks present in ( ordered by priority ):
+ *  - lib/tasks/USER
+ *  - lib/tasks
+ *  - .grunt/custom
+ *
+ * You can override tasks placing a file with the same name in a folder with
+ * higher priority. For example if you need to override default `build` task (
+ * written in .grunt/custom/build.js ) you can place a file called build.js
+ * inside lib/tasks.
+ *
+ * ## Reference
+ *
+ * http://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/
+ * https://quickleft.com/blog/grunt-js-tips-tricks/
+ * https://quickleft.com/blog/grunt-js-custom-tasks/
+ * http://slides.com/joshschumacher/grunt-logging
+ */
+
 var _    = require('lodash');
 var fse  = require('fs-extra');
 var path = require('path');
