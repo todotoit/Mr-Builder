@@ -6,6 +6,13 @@ var path = require('path');
 
 module.exports = function(grunt) {
 
+  //
+  // Grunt utilities
+  //
+  var timeGrunt          = require('time-grunt');
+  var loadGruntConfig    = require('load-grunt-config');
+
+
   var appData = {
     // package: require('package.json') // automatically added
 
@@ -25,14 +32,17 @@ module.exports = function(grunt) {
 
   };
 
-  require('time-grunt')(grunt);
+  // load time-grunt for running time analysis
+  timeGrunt(grunt);
 
-  require('load-grunt-config')(grunt, {
-
+  // execute grunt-config
+  loadGruntConfig(grunt, {
     // path to task.js files, defaults to grunt dir
     configPath: path.join(__dirname, '.grunt/config'),
 
+    // additional data
     data: appData
 
   });
+
 };
