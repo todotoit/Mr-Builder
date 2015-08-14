@@ -13,6 +13,17 @@ module.exports = function(grunt) {
   var loadGruntConfig    = require('load-grunt-config');
 
 
+  //
+  // Paths for custom functionalities and configs
+  //
+  var customGrunt       = '.grunt/';
+  var taskConfigPath    = path.join(customGrunt, 'config');
+  var projectFolder     = 'lib/';
+  var projectConfigPath = path.join(projectFolder, 'grunt');
+
+  var userConfigPath    = path.join(projectConfigPath, process.env.USER);
+
+
   var appData = {
     // package: require('package.json') // automatically added
 
@@ -37,12 +48,16 @@ module.exports = function(grunt) {
 
   // execute grunt-config
   loadGruntConfig(grunt, {
-    // path to task.js files, defaults to grunt dir
-    configPath: path.join(__dirname, '.grunt/config'),
-
+    // auto grunt.initConfig
+    // init: true, // defaults to true
+    // path to task config.js files, defaults to grunt dir
+    configPath: [
+      path.join(__dirname, taskConfigPath),
+      path.join(__dirname, projectConfigPath),
+      path.join(__dirname, userConfigPath),
+    ],
     // additional data
     data: appData
-
   });
 
 };
