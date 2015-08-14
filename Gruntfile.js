@@ -62,17 +62,21 @@ module.exports = function(grunt) {
   //
   var timeGrunt          = require('time-grunt');
   var loadGruntConfig    = require('load-grunt-config');
+  var registerGruntTasks = require('register-grunt-tasks');
 
 
   //
   // Paths for custom functionalities and configs
   //
   var customGrunt       = '.grunt/';
+  var customTaskPath    = path.join(customGrunt, 'tasks');
   var taskConfigPath    = path.join(customGrunt, 'config');
   var projectFolder     = 'lib/';
   var projectConfigPath = path.join(projectFolder, 'grunt');
+  var projectTaskPath   = path.join(projectFolder, 'tasks');
 
   var userConfigPath    = path.join(projectConfigPath, process.env.USER);
+  var userTaskPath      = path.join(projectTaskPath, process.env.USER);
 
 
   //
@@ -116,6 +120,16 @@ module.exports = function(grunt) {
     // override configs with specific type config
     appData = _.defaultsDeep({}, configs, toolchainTypeConfig, appData);
   }
+
+
+  // execute register-grunt-tasks
+  registerGruntTasks(grunt, {
+    path: [
+      path.join(__dirname, customTaskPath),
+      path.join(__dirname, projectTaskPath),
+      path.join(__dirname, userTaskPath),
+    ]
+  });
 
 
   // load time-grunt for running time analysis
