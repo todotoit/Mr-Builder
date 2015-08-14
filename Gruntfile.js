@@ -135,6 +135,7 @@ module.exports = function(grunt) {
   // load time-grunt for running time analysis
   timeGrunt(grunt);
 
+
   // execute grunt-config
   loadGruntConfig(grunt, {
     // auto grunt.initConfig
@@ -152,5 +153,9 @@ module.exports = function(grunt) {
 
   // rename availabletasks to something shorter
   grunt.renameTask('availabletasks', 'tasks');
+
+
+  // bit of cleaness in the output
+  grunt.verbose.writeln();
 
 };
