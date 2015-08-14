@@ -24,6 +24,9 @@ module.exports = function(grunt) {
   var userConfigPath    = path.join(projectConfigPath, process.env.USER);
 
 
+  //
+  // Default option object
+  //
   var appData = {
     // package: require('package.json') // automatically added
 
