@@ -1,20 +1,23 @@
 
-# Grunt tasks configuration files
+# Grunt configuration
 
-This folder contains Grunt tasks configurations, splitted by task.
+This folder contains custom grunt tasks and custom configuration.
 
-To achieve this result [load-grunt-config][1] is used.
+The loading of these files is performed by [Gruntfile.js][1] using `load-grunt-config`
+and custom `registerTasks` functions.
 
-Each grunt task has a specific file named as the task with its configuration.
+```
+.grunt
+├── config
+└── tasks
+```
 
-You can use [`clean.js`][2] as a starting point when adding new tasks.
+The [`config`][2] folder is used to store `load-grunt-config` configuration files,
+as per `load-grunt-config` documentation.
 
-The `options` argument is the `appData` variable present in [`Gruntfile.js`][3]
+The [`tasks`][3] folder is used to store `register-grunt-tasks` custom tasks files,
+as per `register-grunt-tasks` documentation.
 
-The [`aliases.yml`][4] file is the place in which is possible to register grunt
-tasks. See `load-grunt-config` for more informations.
-
-[1]: https://npmjs.org/package/load-grunt-config
-[2]: ./clean.js
-[3]: ../Gruntfile.js
-[4]: ./aliases.yml
+[1]: ../Gruntfile.js
+[2]: ./config
+[3]: ./tasks

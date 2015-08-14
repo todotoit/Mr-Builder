@@ -1,7 +1,11 @@
-default: []
+#
+# load-grunt-config aliases
+#
 
-build:
-  # required, cleans public/ folder
+# This tasks are automatically run by build custom taks ( ../custom/build.js )
+
+'build:simple':
+  # required, cleans dist/ folder
   - 'clean:dist'
   # - 'ngtemplates' # for angular app with partials, check the src for paths config
   # - 'ngAnnotate' # for angular app, check the source
@@ -32,7 +36,17 @@ build:
   # clean .tmp folder, comment for easier debug
   - 'clean:tmp'
 
-dev:
+'build:angular':
+  # required, cleans dist/ folder
+  - 'clean:dist'
+
+'build:static':
+  # required, cleans dist/ folder
+  - 'clean:dist'
+
+# This tasks are automatically run by dev custom taks ( ../custom/dev.js )
+
+'dev:simple':
   # clean development environment from generated files
   - 'clean:dev'
   # svgstore creation
@@ -42,5 +56,10 @@ dev:
   # run browsersync
   - 'browserSync:dev'
 
-test:
-  - 'ngAnnotate'
+'dev:angular':
+  # clean development environment from generated files
+  - 'clean:dev'
+
+'dev:static':
+  # clean development environment from generated files
+  - 'clean:dev'
