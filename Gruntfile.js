@@ -36,6 +36,8 @@ module.exports = function(grunt) {
   //
   var appData = {
     // package: grunt.file.readJSON('package.json') // automatically added by load-grunt-config
+    // choose type of application; enable and disable specific tasks
+    type: 'simple', // simple | angular | static
     // path to different resources
     folders: {
       // source application folder
@@ -53,6 +55,9 @@ module.exports = function(grunt) {
   // override appData with package.json config values
   var configs = pkg.config;
   appData = _.defaultsDeep({}, configs, appData);
+
+
+  grunt.log.writeln('Running toolchain for type: ' + appData.type.cyan);
 
 
   // load time-grunt for running time analysis
