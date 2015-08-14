@@ -86,4 +86,8 @@ module.exports = function(grunt) {
     data: appData
   });
 
+
+  // rename availabletasks to something shorter
+  grunt.renameTask('availabletasks', 'tasks');
+
 };
