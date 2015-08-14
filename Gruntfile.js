@@ -35,22 +35,18 @@ module.exports = function(grunt) {
   // Default option object
   //
   var appData = {
-    // package: require('package.json') // automatically added
-
+    // package: grunt.file.readJSON('package.json') // automatically added by load-grunt-config
+    // path to different resources
     folders: {
       // source application folder
       app: 'app',
-
       // folder used for distribution build
       dist: 'public',
-
       // to be processed resources ( like SVG or language files )
       resources: 'resources',
-
       // temporary folder
       tmp: '.tmp'
     }
-
   };
 
 
