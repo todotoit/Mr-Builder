@@ -5,9 +5,9 @@ module.exports = function (grunt) {
   var type = grunt.config('type');
 
   switch (type) {
-    case 'simple':
-      grunt.log.writeln('Running "dev:simple"');
-      grunt.task.run('dev:simple');
+    case 'standalone':
+      grunt.log.writeln('Running "dev:standalone"');
+      grunt.task.run('dev:standalone');
       break;
     case 'angular':
       grunt.log.writeln('Running "dev:angular"');

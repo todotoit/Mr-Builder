@@ -12,15 +12,15 @@ module.exports = function (grunt, options) {
       showTasks: ['user'],
       filter: 'exclude',
       // exclude this tasks
-      tasks: [  ],
+      tasks: [ 'mdCompile' ],
       // set beautiful descriptions
       descriptions: {
         'build': 'Detect which build:* task should be run according to appData.type',
-        'build:simple': 'Build the app with type "simple"',
+        'build:standalone': 'Build the app with type "standalone"',
         'build:angular': 'Build the app with type "angular"',
         'build:static': 'Build the app with type "static"',
         'dev': 'Detect which dev:* task should be run according to appData.type',
-        'dev:simple': 'Start development mode with type "simple"',
+        'dev:standalone': 'Start development mode with type "standalone"',
         'dev:angular': 'Start development mode with type "angular"',
         'dev:static': 'Start development mode with type "static"',
 

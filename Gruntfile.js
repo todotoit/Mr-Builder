@@ -91,7 +91,7 @@ module.exports = function(grunt) {
   var appData = {
     // package: grunt.file.readJSON('package.json') // automatically added by load-grunt-config
     // choose type of application; enable and disable specific tasks
-    type: 'simple', // simple | angular | static
+    type: 'standalone', // standalone | angular | static
     // path to different resources
     folders: {
       // source application folder

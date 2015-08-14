@@ -4,7 +4,7 @@
 
 # This tasks are automatically run by build custom taks ( ../custom/build.js )
 
-'build:simple':
+'build:standalone':
   # required, cleans dist/ folder
   - 'clean:dist'
   # - 'ngtemplates' # for angular app with partials, check the src for paths config
@@ -46,7 +46,7 @@
 
 # This tasks are automatically run by dev custom taks ( ../custom/dev.js )
 
-'dev:simple':
+'dev:standalone':
   # clean development environment from generated files
   - 'clean:dev'
   # svgstore creation
