@@ -25,6 +25,7 @@
     "grunt-CsvToL10nJson": "git://github.com/endorama/grunt-CsvToL10nJson.git#v0.3.0",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "*",
+    "grunt-available-tasks": "^0.6.0",
     "grunt-browser-sync": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-compress": "*",
