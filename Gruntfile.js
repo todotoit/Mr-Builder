@@ -1,5 +1,6 @@
 'use strict';
 
+var _    = require('lodash');
 var path = require('path');
 
 // https://github.com/shootaroo/jit-grunt
@@ -51,6 +52,12 @@ module.exports = function(grunt) {
     }
 
   };
+
+
+  // override appData with package.json config values
+  var configs = pkg.config;
+  appData = _.defaultsDeep({}, configs, appData);
+
 
   // load time-grunt for running time analysis
   timeGrunt(grunt);
