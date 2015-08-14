@@ -1,6 +1,7 @@
 'use strict';
 
 var _    = require('lodash');
+var fse  = require('fs-extra');
 var path = require('path');
 
 // https://github.com/shootaroo/jit-grunt
@@ -58,6 +59,14 @@ module.exports = function(grunt) {
 
 
   grunt.log.writeln('Running toolchain for type: ' + appData.type.cyan);
+
+
+  // verify if a specific json config for this app type exists
+  if (fse.existsSync(path.join(customGrunt, appData.type + '.json'))) {
+    var toolchainTypeConfig = grunt.file.readJSON(path.join(customGrunt, appData.type + '.json'));
+    // override configs with specific type config
+    appData = _.defaultsDeep({}, configs, toolchainTypeConfig, appData);
+  }
 
 
   // load time-grunt for running time analysis
