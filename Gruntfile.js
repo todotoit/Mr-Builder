@@ -155,8 +155,15 @@ module.exports = function(grunt) {
   });
 
 
-  // rename availabletasks to something shorter
-  grunt.renameTask('availabletasks', 'tasks');
+  // create a proxy availabletasks task ( shorter and custom )
+  grunt.registerTask('tasks', function (subTask) {
+    if (!subTask) {
+      grunt.task.run('availabletasks:user');
+    }
+    else {
+      grunt.task.run('availabletasks:' + subTask);
+    }
+  });
 
 
   // bit of cleaness in the output
