@@ -10,7 +10,6 @@ module.exports = function (grunt, options) {
     options: {
       sourceMap: true,
       sourceMapIn: function(uglifySource) {
-        console.log(uglifySource)
         return uglifySource + '.map';
       },
     },
