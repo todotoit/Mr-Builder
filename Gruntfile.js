@@ -23,9 +23,9 @@
  * ## Task configuration
  *
  * Task configuration are loaded from ( ordered by priority ):
- *  - lib/grunt/USER/{{task}}.js
- *  - lib/grunt/{{task}}.js
- *  - .grunt/config/{{task}}.js
+ *  - lib/grunt/USER
+ *  - lib/grunt
+ *  - .grunt/config
  *
  * Files inside these folders should comply with load-grunt-config docs
  *
@@ -34,7 +34,7 @@
  * This Gruntfile will include custom tasks present in ( ordered by priority ):
  *  - lib/tasks/USER
  *  - lib/tasks
- *  - .grunt/custom
+ *  - .grunt/tasks
  *
  * You can override tasks placing a file with the same name in a folder with
  * higher priority. For example if you need to override default `build` task (
