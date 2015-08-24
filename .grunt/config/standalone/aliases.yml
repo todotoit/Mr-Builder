@@ -1,10 +1,9 @@
 #
 # load-grunt-config aliases
 #
+# These tasks will be available when appData.type == standalone
 
-# This tasks are automatically run by build custom taks ( ../custom/build.js )
-
-'build:standalone':
+build:
   # required, cleans dist/ folder
   - 'clean:dist'
   # - 'ngtemplates' # for angular app with partials, check the src for paths config
@@ -36,17 +35,8 @@
   # clean .tmp folder, comment for easier debug
   - 'clean:tmp'
 
-'build:angular':
-  # required, cleans dist/ folder
-  - 'clean:dist'
 
-'build:static':
-  # required, cleans dist/ folder
-  - 'clean:dist'
-
-# This tasks are automatically run by dev custom taks ( ../custom/dev.js )
-
-'dev:standalone':
+dev:
   # clean development environment from generated files
   - 'clean:dev'
   # svgstore creation
@@ -55,11 +45,3 @@
   - 'CsvToL10nJson:dev'
   # run browsersync
   - 'browserSync:dev'
-
-'dev:angular':
-  # clean development environment from generated files
-  - 'clean:dev'
-
-'dev:static':
-  # clean development environment from generated files
-  - 'clean:dev'
