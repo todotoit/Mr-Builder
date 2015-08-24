@@ -19,8 +19,8 @@ module.exports = function (grunt, options) {
         tasks: [ 'mdCompile' ],
         // set beautiful descriptions
         descriptions: {
-          'build': 'Detect which build:* task should be run according to appData.type',
-          'dev':   'Detect which dev:* task should be run according to appData.type',
+          'build': 'Build application',
+          'dev':   'Starts development environment',
           'tasks': 'Show avaialble tasks. To show every possible available task run tasks:all'
         },
       }
