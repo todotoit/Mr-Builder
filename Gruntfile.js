@@ -25,6 +25,7 @@
  * Task configuration are loaded from ( ordered by priority ):
  *  - lib/grunt/USER
  *  - lib/grunt
+ *  - .grunt/config/{{appData.type}}
  *  - .grunt/config
  *
  * Files inside these folders should comply with load-grunt-config docs
@@ -34,6 +35,7 @@
  * This Gruntfile will include custom tasks present in ( ordered by priority ):
  *  - lib/tasks/USER
  *  - lib/tasks
+ *  - .grunt/tasks/{{appData.type}}
  *  - .grunt/tasks
  *
  * You can override tasks placing a file with the same name in a folder with
@@ -126,6 +128,7 @@ module.exports = function(grunt) {
   registerGruntTasks(grunt, {
     path: [
       path.join(__dirname, customTaskPath),
+      path.join(__dirname, customTaskPath, appData.type),
       path.join(__dirname, projectTaskPath),
       path.join(__dirname, userTaskPath),
     ]
@@ -143,6 +146,7 @@ module.exports = function(grunt) {
     // path to task config.js files, defaults to grunt dir
     configPath: [
       path.join(__dirname, taskConfigPath),
+      path.join(__dirname, taskConfigPath, appData.type),
       path.join(__dirname, projectConfigPath),
       path.join(__dirname, userConfigPath),
     ],
