@@ -104,7 +104,8 @@ module.exports = function(grunt) {
       resources: 'resources',
       // temporary folder
       tmp: '.tmp'
-    }
+    },
+    rootPath: process.cwd()
   };
 
 
