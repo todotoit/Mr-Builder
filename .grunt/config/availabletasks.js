@@ -16,7 +16,6 @@ module.exports = function (grunt, options) {
         showTasks: ['user'],
         filter: 'exclude',
         // exclude this tasks
-        tasks: [ 'mdCompile' ],
         // set beautiful descriptions
         descriptions: {
           'build': 'Build application',
