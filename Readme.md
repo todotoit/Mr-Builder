@@ -1,12 +1,25 @@
+# Mr Builder
 
-# Octo Happiness
+[TODO](http://todo.to.it) StarterKit scaffolding to work with Frontend app with happyness.
 
-This repository is meant to be the starting point for our frontend applications,
-and aid developers to reach happiness when starting a new project.
 
-Basically is a simple folder structure with custom grunt tasks.
+# Setting up the new project
 
-The name has been kindly suggested by Github :)
+- Create a new repository on Github without init files for your new project
+- Clone Mr-Builder into your local system without history using ```git clone --depth 1 https://github.com/todotoit/Mr-Builder```
+- Rename the folder as per your new project
+- Set the new remote ```git remote set-url origin <GithubRepositoryUrl>```
+- Push the repo ```git push```
+
+
+# Setting up the development
+
+- Clone your new project repository based on Mr-Builder
+- run ```npm install``` or ```sudo npm install`` if you are on mac
+- run ``` grunt dev``` to start your development session
+
+
+
 
 ## Folder structure
 
@@ -28,9 +41,6 @@ octo-happiness
     └── locales         application source locale files
 ```
 
-## Initial setup
-
-Run `npm run setup`
 
 ## Available grunt tasks
 
@@ -66,10 +76,7 @@ This task currently performs this operations:
 Please refer to `build` task declaration in `.grunt/aliases.yml` for further
 info.
 
-## Missing steps & other issues
 
-Open issues! :) This is and will remain a work in progress, so if you have any
-idea feel free to propose it and start a discussion.
 
 ## Notes and links
 
