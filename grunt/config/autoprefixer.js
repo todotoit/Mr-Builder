@@ -8,7 +8,7 @@ module.exports = function (grunt, options) {
   return {
 
     dist: {
-      src:  path.join(options.folders.tmp, 'concat/css/app.css' ),
+      src:  path.join(options.folders.tmp, 'concat/**/*.css' ),
       // dest: path.join(options.folders.tmp, 'concat/css/app.css' ),
     }
 

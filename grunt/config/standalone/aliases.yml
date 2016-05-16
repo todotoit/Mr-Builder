@@ -29,7 +29,7 @@ build:
   # process public/index.html
   - 'processhtml'
   # minify public/index.html
-  - 'htmlmin:dist'
+  - 'htmlmin:single'
   # creates json from csv inside resources/locales
   - 'CsvToL10nJson:dist'
   # clean .tmp folder, comment for easier debug
