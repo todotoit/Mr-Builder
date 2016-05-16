@@ -1,11 +1,12 @@
 {
   "name": "ProjectName",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Project Description",
   "private": true,
   "main": "public/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tag": "npm version patch && git push --tags",
+    "deploy_on_github_pages": "git checkout -b temporary_for_deploy && git add --force public && git commit -m \"build on gh pages\" && git push origin :gh-pages && git subtree push --prefix public origin gh-pages && git checkout master && git branch -D temporary_for_deploy"
   },
   "config": {},
   "repository": {

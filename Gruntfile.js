@@ -70,7 +70,7 @@ module.exports = function(grunt) {
   //
   // Paths for custom functionalities and configs
   //
-  var customGrunt       = '.grunt/';
+  var customGrunt       = 'grunt/';
   var customTaskPath    = path.join(customGrunt, 'tasks');
   var taskConfigPath    = path.join(customGrunt, 'config');
   var projectFolder     = 'lib/';

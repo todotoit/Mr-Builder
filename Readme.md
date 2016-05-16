@@ -42,6 +42,14 @@ octo-happiness
 ```
 
 
+
+## Available npm scripts
+
+### tag
+
+This script will patch the version in the package.json and will create the corresponding git tag. Usually it is used before a release/deploy.
+
+
 ## Available grunt tasks
 
 ### dev
