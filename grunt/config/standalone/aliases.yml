@@ -6,6 +6,7 @@
 build:
   # required, cleans dist/ folder
   - 'clean:dist'
+  # - 'fetchJson:fetchSomeApi'
   # - 'ngtemplates' # for angular app with partials, check the src for paths config
   # - 'ngAnnotate' # for angular app, check the source
   # svgstore creation

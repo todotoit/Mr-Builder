@@ -86,6 +86,11 @@ module.exports = function(grunt) {
   //
   var pkg = grunt.file.readJSON('package.json');
 
+  var on_env = grunt.option('on');
+  if(!on_env) on_env = 'default'
+
+  var env = grunt.file.readJSON(path.join(__dirname, 'env.json'))
+  var whichEnv = (env) ? env[on_env] : null
 
   //
   // Default option object
@@ -94,6 +99,10 @@ module.exports = function(grunt) {
     // package: grunt.file.readJSON('package.json') // automatically added by load-grunt-config
     // choose type of application; enable and disable specific tasks
     type: 'standalone', // standalone | angular | static
+
+    version: pkg.version,
+    env: whichEnv,
+
     // path to different resources
     folders: {
       // source application folder

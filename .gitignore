@@ -28,3 +28,6 @@ nbproject
 .idea
 .node_history
 tmp/
+env.json
+ignore
+*.app
