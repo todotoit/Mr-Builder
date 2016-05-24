@@ -4,18 +4,19 @@ module.exports = function (grunt, options) {
 
  return {
 
-    mytask:{
-      	options: {
-          selector:'data-svg',
-          removeAttr:true
+    test: {
+        options: {
+          selector:'data-svg'
         },
         files: [
           {
-            src:  'example/*.html',
+            expand:true,
+            cwd: 'public/',
+            src: ['*.html'],
             dest: 'public/'
           }
         ]
-    }
+      }
 
   };
 
