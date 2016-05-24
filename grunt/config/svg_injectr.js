@@ -4,16 +4,17 @@ module.exports = function (grunt, options) {
 
  return {
 
-    test: {
+    multi: {
         options: {
-          selector:'data-svg'
+          selector:'data-svg',
+          removeAttr:true
         },
         files: [
           {
             expand:true,
-            cwd: 'public/',
-            src: ['*.html'],
-            dest: 'public/'
+            cwd: options.folders.dist,
+            src: ['*.html', '**/*.html'],
+            dest: options.folders.dist
           }
         ]
       }

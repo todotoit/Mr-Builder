@@ -3,6 +3,8 @@
 #
 # These tasks will be available when appData.type == standalone
 
+
+
 build:
   # required, cleans dist/ folder
   - 'clean:dist'
@@ -29,6 +31,7 @@ build:
   - 'usemin'
   # process public/index.html
   - 'processhtml'
+  # - 'svg_injectr:multi'
   # minify public/index.html
   - 'htmlmin:single'
   # creates json from csv inside resources/locales
