@@ -3,8 +3,6 @@
 
 # auto generated files
 app/locales/*.json
-app/assets/icons.svg
-app/assets/icons-demo.html
 
 # Dependencies
 node_modules

@@ -1,9 +1,9 @@
 {
-  "name": "ProjectName",
+  "name": "Mr-Builder",
   "version": "0.0.0",
   "private": true,
   "authors": [
-    "Edoardo Tenani <edoardo.tenani@gmail.com>"
+    "Edoardo Tenani <e.tenani@todo.to.it>",
   ],
   "license": "MIT",
   "ignore": [
