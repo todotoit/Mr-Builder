@@ -86,11 +86,18 @@ module.exports = function(grunt) {
   //
   var pkg = grunt.file.readJSON('package.json');
 
-  var on_env = grunt.option('on');
+  var on_env = grunt.option('env'); // i.e. grunt build --env=default
   if(!on_env) on_env = 'default'
 
-  var env = grunt.file.readJSON(path.join(__dirname, 'env.json'))
-  var whichEnv = (env) ? env[on_env] : null
+  var whichEnv
+
+  try{
+    var env = grunt.file.readJSON(path.join(__dirname, 'env.json'))
+    whichEnv = (env) ? env[on_env] : null
+  }catch(e){
+  }
+
+  console.log(whichEnv)
 
   //
   // Default option object

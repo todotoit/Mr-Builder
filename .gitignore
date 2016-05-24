@@ -13,6 +13,7 @@ public/
 
 # Temporary build folder
 .tmp/
+.sass-cache
 
 # NodeJS & Npm
 npm-debug.log
@@ -26,6 +27,5 @@ nbproject
 .idea
 .node_history
 tmp/
-env.json
 ignore
 *.app

@@ -3,7 +3,8 @@
 #
 # These tasks will be available when appData.type == standalone
 
-
+test:
+  - sass
 
 build:
   # required, cleans dist/ folder
@@ -19,8 +20,8 @@ build:
   - 'useminPrepare'
   # concat css and js files
   - 'concat:generated'
-  # run autoprefixer on concat css file
-  - 'autoprefixer'
+  # run postcss on concat css file
+  - 'postcss'
   # minify css ( with sourcemaps )
   - 'cssmin:generated'
   # minify js ( with sourcemaps )

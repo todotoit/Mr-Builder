@@ -8,6 +8,7 @@
 - Create a new repository on Github without init files for your new project
 - Clone Mr-Builder into your local system without history using ```git clone --depth 1 https://github.com/todotoit/Mr-Builder```
 - Rename the folder as per your new project
+- Rename the project name and reset the version into ```package.json``` file
 - Set the new remote ```git remote set-url origin <GithubRepositoryUrl>```
 - Push the repo ```git push```
 
@@ -20,12 +21,23 @@
 
 
 
+# Setting the environment
+
+There is a ```env.json``` file for environment configs. It's an hash that can be populated with different envs.
+The key env ```default``` is required, it's the one that will be used once a grunt task ahs been launced without parameter.
+If you need to set different **default** env in different machines, gitignore env.json file and put a version on each machine with the ```default``` key set properly.
+Otherwise you can call a grunt task using a parameter corresponding the env key within the env.json file:
+
+	grunt build --end=development
+
+This command will run the build task and the object in the ```development``` key will be passed in the appData.env object.
+
+
 
 ## Folder structure
 
 ```
-octo-happiness
-├── .grunt              grunt tasks folder ( load-grunt-tasks )
+├── grunt              grunt tasks folder ( load-grunt-tasks )
 ├── app                 application main folder
 │   ├── css             application css folder
 │   ├── index.html      application entry point
@@ -45,9 +57,19 @@ octo-happiness
 
 ## Available npm scripts
 
-### tag
+### npm run tag
 
 This script will patch the version in the package.json and will create the corresponding git tag. Usually it is used before a release/deploy.
+
+### npm run serve
+
+Shortcut of ```http-server``` 
+
+### npm run deploy_on_github_pages
+
+Deploy the public folder (which is the built version) on Github Pages on the same repository.
+Remember that you can deploy any branches because the build  will be run on your local machine.
+You can easily set up additional Github Pages in order to set different version of the build.
 
 
 ## Available grunt tasks

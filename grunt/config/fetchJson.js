@@ -2,6 +2,8 @@
 
 module.exports = function (grunt, options) {
 
+  var url = 'http://some/api'
+
  return {
 
     fetchSomeApi:{
