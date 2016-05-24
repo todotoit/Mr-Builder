@@ -4,9 +4,6 @@ var path = require('path');
 
 module.exports = function (grunt, options) {
 
-  // console.log(grunt.config('clean'))
-  // console.log(options)
-
   // this is the grunt configuration object
   return {
 

@@ -4,6 +4,10 @@
 # These tasks will be available when appData.type == standalone
 
 
+test:
+  - simple_task
+  - 'clean:dist'
+
 build:
   # required, cleans dist/ folder
   - 'clean:dist'
