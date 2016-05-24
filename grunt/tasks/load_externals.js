@@ -1,3 +1,7 @@
+/*
+This task will inject into the global Grunt config file the 'people' array needed by json_templating task
+*/
+
 'use strict';
 
 var grunt = require('grunt');
@@ -22,7 +26,5 @@ module.exports = function () {
 	}catch(e){
 		console.log('err', e)
 	}
-
-	grunt.task.run('json_templating');
 
 };

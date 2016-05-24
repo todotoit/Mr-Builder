@@ -6,16 +6,13 @@ module.exports = function (grunt, options) {
 
  return {
 
-    team:{
-    	options: {
-          data: options.people,
+    options: {
+          data: '<%= keyvar_in_data_config %>',
           ext: 'html'
         },
         files: {
           '/path/to/folder/dest': '/path/to/file_template.html'
-        }
-    }
-
-  };
+      }
+    };
 
 };
