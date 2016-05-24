@@ -3,8 +3,6 @@
 #
 # These tasks will be available when appData.type == standalone
 
-test:
-  - sass
 
 build:
   # required, cleans dist/ folder
@@ -42,11 +40,7 @@ build:
 
 
 dev:
-  # clean development environment from generated files
   - 'clean:dev'
-  # svgstore creation
-  - 'svgstore:dev'
-  # convert csv to locale json files
-  - 'CsvToL10nJson:dev'
-  # run browsersync
+  # - 'svgstore:dev'
+  # - 'CsvToL10nJson:dev'
   - 'browserSync:dev'

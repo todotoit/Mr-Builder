@@ -17,6 +17,7 @@ module.exports = function (grunt, options) {
         server: {
           baseDir: path.join(options.rootPath, options.folders.app)
         },
+        watchTask: false,
         open: false
       }
     }

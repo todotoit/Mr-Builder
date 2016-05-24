@@ -57,19 +57,36 @@ This command will run the build task and the object in the ```development``` key
 
 ## Available npm scripts
 
+
 ### npm run tag
 
 This script will patch the version in the package.json and will create the corresponding git tag. Usually it is used before a release/deploy.
 
+
 ### npm run serve
 
 Shortcut of ```http-server``` 
+
 
 ### npm run deploy_on_github_pages
 
 Deploy the public folder (which is the built version) on Github Pages on the same repository.
 Remember that you can deploy any branches because the build  will be run on your local machine.
 You can easily set up additional Github Pages in order to set different version of the build.
+
+
+### npm run sassdev
+
+Alias of ```grunt gruntsassdev --gruntfile GruntSassDev.js```.
+Run this command to start a development session with .scss files alongside the live reload of Browser-sync.
+You need to change the GruntSassDev.js file which is the grunt file used for this specific tasks because the original one is too slow for proper development job.
+
+
+### npm run dev
+
+Alias of ```grunt dev```.
+Start a regular session with Browser-sync.
+
 
 
 ## Available grunt tasks

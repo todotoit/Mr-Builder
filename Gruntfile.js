@@ -97,8 +97,6 @@ module.exports = function(grunt) {
   }catch(e){
   }
 
-  console.log(whichEnv)
-
   //
   // Default option object
   //
