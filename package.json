@@ -1,7 +1,7 @@
 {
-  "name": "ProjectName",
+  "name": "Mr-Builder",
   "version": "1.0.7",
-  "description": "Project Description",
+  "description": "TODO Project StarterKit",
   "private": true,
   "scripts": {
     "serve": "http-server",
