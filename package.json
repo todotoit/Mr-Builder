@@ -52,6 +52,7 @@
     "grunt-newer": "^1.1.1",
     "grunt-ng-annotate": "^1.0.1",
     "grunt-processhtml": "*",
+    "grunt-svg-injectr": "^0.1.3",
     "grunt-svgstore": "^0.5.0",
     "grunt-usemin": "2.6.2",
     "http-server": "^0.9.0",
