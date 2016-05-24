@@ -10,8 +10,21 @@ module.exports = function (grunt, options) {
     options: {
       dest: options.folders.dist
     },
-    html: path.join(options.folders.app, 'index.html')
 
+    single:{
+      html: path.join(options.folders.app, 'index.html')
+    },
+    
+    multi:{
+      files: {
+        src: [
+          path.join(options.folders.app, 'index.html'),
+          path.join(options.folders.app, '**/*.html'),
+          '!' + path.join(options.folders.app, 'vendor')
+        ]
+      }
+    }
+ 
   };
 
 };
