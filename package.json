@@ -3,7 +3,6 @@
   "version": "1.0.6",
   "description": "Project Description",
   "private": true,
-  "main": "public/index.html",
   "scripts": {
     "serve": "http-server",
     "tag": "npm version patch && git push --tags",
@@ -12,10 +11,10 @@
   "config": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/todotoit/repo.git"
+    "url": "https://github.com/todotoit/Mr-Builder.git"
   },
   "author": [
-    "Edoardo Tenani <edoardo.tenani@gmail.com>",
+    "Edoardo Tenani <e.tenani@todo.to.it>",
     "Fabio Franchino <f.franchino@todo.to.it>"
   ],
   "license": "All Rights Reserved",
@@ -26,6 +25,9 @@
     "lodash": "^3.10.1",
     "marked": "^0.3.5",
     "q": "^1.4.1"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
