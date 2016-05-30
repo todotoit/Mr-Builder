@@ -7,6 +7,17 @@ module.exports = function (grunt, options) {
   // this is the grunt configuration object
   return {
 
+    app:{
+      files:[
+        {
+          expand: true,
+          cwd: path.join(options.folders.dev, ''),
+          src: ['**/*'], 
+          dest: options.folders.app
+        }
+      ]
+    },
+
     dist: {
       files: [
         {

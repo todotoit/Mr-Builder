@@ -10,12 +10,12 @@ module.exports = function (grunt, options) {
     dev:{
       bsFiles: {
         src : [
-          options.folders.app,
+          options.folders.dev,
         ]
       },
       options: {
         server: {
-          baseDir: path.join(options.rootPath, options.folders.app)
+          baseDir: path.join(options.rootPath, options.folders.dev)
         },
         watchTask: false,
         open: false

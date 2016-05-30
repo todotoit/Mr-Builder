@@ -1,9 +1,9 @@
 # Mr Builder
 
-[TODO](http://todo.to.it) StarterKit scaffolding to work with Frontend app with happyness.
+[TODO](http://todo.to.it) Collection of Grunt tasks and scripts to work with Frontend app with happyness.
 
 
-# Setting up the new project
+# Setting up your new project repository
 
 - Create a new repository on Github without init files for your new project
 - Clone Mr-Builder into your local system without history using ```git clone --depth 1 https://github.com/todotoit/Mr-Builder```
@@ -32,26 +32,6 @@ Otherwise you can call a grunt task using a parameter corresponding the env key 
 
 This command will run the build task and the object in the ```development``` key will be passed in the appData.env object.
 
-
-
-## Folder structure
-
-```
-├── grunt              grunt tasks folder ( load-grunt-tasks )
-├── app                 application main folder
-│   ├── css             application css folder
-│   ├── index.html      application entry point
-│   ├── js              application js folder
-│   ├── locales         automatically build folder for locales files
-│   └── vendor          bower components folder
-├── bower.json
-├── Gruntfile.js
-├── package.json
-├── public              application distribution folder
-├── Readme.md
-└── resources           application resource's source
-    └── locales         application source locale files
-```
 
 
 

@@ -3,14 +3,9 @@
 #
 # These tasks will be available when appData.type == standalone
 
-pro:
-  - 'process'
-
 dev:
   - 'browserSync:dev'
 
-temp:
-  - 'nunjucks'
 
 minimal_build:
   - 'clean:dist'

@@ -108,15 +108,11 @@ module.exports = function(grunt) {
     version: pkg.version,
     env: whichEnv,
 
-    // path to different resources
     folders: {
-      // source application folder
-      app: 'app',
-      // folder used for distribution build
+      app: '.app',
+      dev: 'app',
       dist: 'public',
-      // to be processed resources ( like SVG or language files )
       resources: 'resources',
-      // temporary folder
       tmp: '.tmp'
     },
     rootPath: process.cwd()
