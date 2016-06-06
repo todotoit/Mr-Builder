@@ -6,7 +6,6 @@
   "scripts": {
     "serve": "http-server",
     "tag": "npm version patch && git push --tags",
-    "deploy_on_github_pages": "git checkout -b temporary_for_deploy && git add --force public && git commit -m \"build on gh pages\" && git push origin :gh-pages && git subtree push --prefix public origin gh-pages && git checkout master && git branch -D temporary_for_deploy",
     "sassdev": "grunt gruntsassdev --gruntfile GruntSassDev.js",
     "dev": "grunt dev"
   },
@@ -53,6 +52,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-fetch-json": "0.0.5",
     "grunt-filerev": "^2.3.1",
+    "grunt-gh-pages": "^1.1.0",
     "grunt-image-embed": "^0.3.3",
     "grunt-json-templating": "^0.1.0",
     "grunt-newer": "^1.1.1",
