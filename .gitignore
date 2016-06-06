@@ -15,6 +15,7 @@ public/
 .tmp/
 .sass-cache
 .grunt
+tests
 
 # NodeJS & Npm
 npm-debug.log

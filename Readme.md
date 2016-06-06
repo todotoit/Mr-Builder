@@ -3,7 +3,7 @@
 [TODO](http://todo.to.it) Collection of Grunt tasks and scripts to work with Frontend app with happyness.
 
 
-# Setting up your new project repository
+# Setting up your project repository based on Mr-Builder
 
 - Create a new repository on Github without init files for your new project
 - Clone Mr-Builder into your local system without history using ```git clone --depth 1 https://github.com/todotoit/Mr-Builder```
@@ -15,7 +15,7 @@
 
 # Setting up the development
 
-- Clone your new project repository based on Mr-Builder
+- Clone your new project repository (if not already cloned) based on Mr-Builder
 - run ```npm install``` or ```sudo npm install`` if you are on mac
 - run ``` grunt dev``` to start your development session
 
@@ -33,6 +33,12 @@ Otherwise you can call a grunt task using a parameter corresponding the env key 
 This command will run the build task and the object in the ```development``` key will be passed in the appData.env object.
 
 
+# Regular development session
+
+```grunt dev```
+
+
+--
 
 
 ## Available npm scripts
@@ -45,7 +51,7 @@ This script will patch the version in the package.json and will create the corre
 
 ### npm run serve
 
-Shortcut of ```http-server``` 
+Shortcut of ```http-server``` to test the built version which is usually in ```/public``` folder
 
 
 
@@ -62,6 +68,8 @@ You need to change the GruntSassDev.js file which is the grunt file used for thi
 
 Alias of ```grunt dev```.
 Start a regular session with Browser-sync.
+
+
 
 
 
