@@ -6,10 +6,11 @@
 # Setting up your project repository based on Mr-Builder
 
 - Create a new repository on Github without init files for your new project
-- Clone Mr-Builder into your local system without history using ```git clone --depth 1 https://github.com/todotoit/Mr-Builder```
-- Rename the folder as per your new project
-- Rename the project name and reset the version into ```package.json``` file
-- Set the new remote ```git remote set-url origin <GithubRepositoryUrl>```
+- Download the zip file of the release, unzip and rename it, it will be your working copy
+- ```git init```
+- Rename the project name and reset the version into ```package.json``` file ane reset the README.md file included
+- ```git add -A``` and ```git commit -m "first commit"```
+- ```git remote add origin <YourNewGithubRepositoryUrl>```
 - Push the repo ```git push```
 
 
