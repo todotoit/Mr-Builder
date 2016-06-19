@@ -14,14 +14,14 @@ module.exports = function (grunt, options) {
       includeBase: options.folders.dist
     },
     single:{
-      dest: path.join(options.folders.dist, 'index.html'),
-      src:  [ path.join(options.folders.dist, 'index.html') ]
+      dest: path.join(options.folders.app, 'index.html'),
+      src:  [ path.join(options.folders.app, 'index.html') ]
     },
     multi:{
       expand: true,
-      cwd: options.folders.dist,
+      cwd: options.folders.app,
       src: ['*.html', '**/*.html'], 
-      dest: options.folders.dist
+      dest: options.folders.app
     }
   }
 

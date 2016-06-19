@@ -17,13 +17,13 @@ module.exports = function (grunt, options) {
 
       processors: [
         require('pixrem')(), // add fallbacks for rem units
-        require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+        require('autoprefixer')({browsers: 'last 3 versions'}), // add vendor prefixes
         require('cssnano')() // minify the result
       ]
     },
     dist: {
-      src:  path.join(options.folders.tmp, 'concat/**/*.css' ),
-      // dest: path.join(options.folders.tmp, 'concat/css/app.css' ),
+      src:  [path.join(options.folders.tmp, 'concat/**/*.css' ), path.join(options.folders.tmp, 'concat/*.css' )],
+      //dest: path.join(options.folders.tmp, 'concat/css/app.css' ),
     }
 
   };

@@ -1,23 +1,22 @@
-#
-# load-grunt-config aliases
-#
-# These tasks will be available when appData.type == standalone
-
 dev:
   - 'browserSync:dev'
 
 
-minimal_build:
+build:
   - 'clean:dist'
-  - 'copy:dist'
-  - 'useminPrepare'
+  - 'copy:app'
+
+  - 'useminPrepare:multi'
   - 'concat:generated'
   - 'postcss'
   - 'uglify:generated'
+  - 'cssmin:generated'
   - 'usemin'
-  - 'processhtml'
-  - 'svg_injectr:multi'
-  - 'htmlmin:single'
+
+  - 'processhtml:multi'
+  - 'htmlmin:multi'
+
+  - 'copy:dist'
   - 'clean:tmp'
 
 
@@ -28,6 +27,4 @@ other_tasks:
   - 'svgstore:dist'
   - 'filerev:dist'
   - 'CsvToL10nJson:dist'
-
-
 

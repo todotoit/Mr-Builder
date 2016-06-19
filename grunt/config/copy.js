@@ -11,7 +11,7 @@ module.exports = function (grunt, options) {
       files:[
         {
           expand: true,
-          cwd: path.join(options.folders.dev, ''),
+          cwd: options.folders.dev,
           src: ['**/*'], 
           dest: options.folders.app
         }
@@ -21,8 +21,10 @@ module.exports = function (grunt, options) {
     dist: {
       files: [
         {
-          src:  path.join(options.folders.app, 'index.html'),
-          dest: path.join(options.folders.dist, 'index.html')
+          expand: true,
+          cwd: options.folders.app,
+          src:  ['*.html', '**/*.html', '!vendor/**/*.html'],
+          dest: options.folders.dist
         },
         {
           expand: true,

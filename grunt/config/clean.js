@@ -8,7 +8,7 @@ module.exports = function (grunt, options) {
   return {
 
     dist: options.folders.dist,
-    tmp:  options.folders.tmp,
+    tmp:  [options.folders.tmp, options.folders.app, options.folders.grn]
 
   };
 
