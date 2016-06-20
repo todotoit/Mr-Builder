@@ -16,7 +16,7 @@ module.exports = function (grunt, options) {
 	      		return ''
 	      },
 	      css: function(block){
-	      		return '';
+	      		return '<link href="'+block.dest+'?__inline=true" rel="stylesheet" />';
 	      }
 	    }
 	  }

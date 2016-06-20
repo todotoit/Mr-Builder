@@ -3,8 +3,8 @@ dev:
 
 
 build:
-  - 'clean:dist'
-  - 'copy:app'
+  - 'clean:dist' # clean public folder
+  - 'copy:app' # duplicate the entire src folder for manipulation
 
   - 'useminPrepare:multi'
   - 'concat:generated'
@@ -15,8 +15,9 @@ build:
 
   - 'processhtml:multi'
   - 'htmlmin:multi'
-
+  
   - 'copy:dist'
+  - 'inline' # inject css into html 
   - 'clean:tmp'
 
 
@@ -27,4 +28,5 @@ other_tasks:
   - 'svgstore:dist'
   - 'filerev:dist'
   - 'CsvToL10nJson:dist'
+  - 'inlinecss' # this inline each css rune in html tag (perfect for newsletter)
 
