@@ -13,7 +13,18 @@ module.exports = function (grunt, options) {
           expand: true,
           cwd: options.folders.dev,
           src: ['**/*'], 
-          dest: options.folders.app
+          dest: path.join(options.folders.app, '')
+        }
+      ]
+    },
+
+    ver:{
+      files:[
+        {
+          expand: true,
+          cwd: options.folders.dev,
+          src: ['**/*'], 
+          dest: path.join(options.folders.app, options.version)
         }
       ]
     },

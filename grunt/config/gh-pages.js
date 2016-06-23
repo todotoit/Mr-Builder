@@ -11,6 +11,12 @@ module.exports = function (grunt, options) {
       base: options.folders.dist,
       message: 'Git-Pages Deploy'
     },
+    'changelog': {
+      options: {
+        add:true
+      },
+      src: ['**']
+    },
     'gh-pages': {
       options: {
       },
