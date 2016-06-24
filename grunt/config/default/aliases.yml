@@ -10,8 +10,9 @@ version_release:
   - 'clean:tmp'
   - 'clean:dist'
   - 'copy:ver'
-  - 'create_index'
+  - 'create_index' 
   - 'gh-pages:changelog'
+  - 'clean:tmp'
 
 
 build:
