@@ -57,6 +57,7 @@
     "grunt-inline": "^0.3.6",
     "grunt-inline-css": "^0.1.5",
     "grunt-json-templating": "^0.1.0",
+    "grunt-locales": "^7.1.0",
     "grunt-newer": "^1.1.1",
     "grunt-ng-annotate": "^1.0.1",
     "grunt-postcss": "^0.8.0",

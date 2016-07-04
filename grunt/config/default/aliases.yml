@@ -6,6 +6,7 @@ dev:
 # this group of tasks will create a version of the app in a proper folder 
 # and it will be added on gh-pages presenving the previous one with a generated index file
 # npm run tag before this
+
 version_release:
   - 'clean:tmp'
   - 'clean:dist'
@@ -15,7 +16,14 @@ version_release:
   - 'clean:tmp'
 
 
+locale:
+  - 'clean:tmp'
+  - 'copy:app'
+  - 'locales:update'
+
+
 build:
+  - 'clean:tmp'
   - 'clean:dist' # clean public folder
   - 'copy:app' # duplicate the entire src folder for manipulation
 

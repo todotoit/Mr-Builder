@@ -17,7 +17,9 @@ module.exports = function (grunt, options) {
 	      		return ''
 	      },
 	      css: function(block){
-	      		return '<link href="'+block.dest+'?__inline=true&v='+version+'" rel="stylesheet" />';
+	      		var dest = block.dest.split('/')
+	      		dest = (dest.length>1) ? dest[dest.length-1] : dest[0]
+	      		return '<link href="'+dest+'?__inline=true&v='+version+'" rel="stylesheet" />';
 	      }
 	    }
 	  }
