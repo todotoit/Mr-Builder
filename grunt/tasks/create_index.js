@@ -22,6 +22,6 @@ module.exports = function () {
 	str += '</ul></body></html>'
 	*/
 
-	grunt.file.write(path.join(folders.app, 'index.html'), str);
+	grunt.file.write(path.join(folders.dist, 'index.html'), str);
 
 };

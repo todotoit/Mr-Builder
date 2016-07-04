@@ -58,7 +58,7 @@ module.exports = function(grunt) {
     env: whichEnv,
 
     folders: {
-      dev: 'starterkit/static_site',
+      dev: 'starterkit',
       app: '.app',
       dist: 'public',
       resources: 'resources',

@@ -18,7 +18,7 @@ module.exports = function (grunt, options) {
         dest: path.join(options.folders.app, 'locales/{locale}/i18n.json')
     },
     build: {
-        src: path.join(options.folders.app, 'locales/**/i18n.json')
+        src: path.join(options.folders.app, 'locales/**/i18n.json'),
         dest: 'js/locales/{locale}/i18n.js'
     },
     'export': {

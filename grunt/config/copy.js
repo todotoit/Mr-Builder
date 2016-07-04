@@ -22,9 +22,9 @@ module.exports = function (grunt, options) {
       files:[
         {
           expand: true,
-          cwd: options.folders.dev,
+          cwd: options.folders.dist,
           src: ['**/*'], 
-          dest: path.join(options.folders.app, options.version)
+          dest: path.join(options.folders.dist, options.version)
         }
       ]
     },

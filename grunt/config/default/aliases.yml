@@ -1,31 +1,19 @@
+# development session
 dev:
   - 'browserSync:dev'
 
 
-
-# this group of tasks will create a version of the app in a proper folder 
-# and it will be added on gh-pages presenving the previous one with a generated index file
-# npm run tag before this
-
-version_release:
+# meta task to clean up before build process
+cleanall:
   - 'clean:tmp'
   - 'clean:dist'
-  - 'copy:ver'
-  - 'create_index' 
-  - 'gh-pages:changelog'
-  - 'clean:tmp'
 
 
-locale:
-  - 'clean:tmp'
-  - 'copy:app'
-  - 'locales:update'
-
-
+# complete chain to build a static multi pages website
 build:
-  - 'clean:tmp'
-  - 'clean:dist' # clean public folder
-  - 'copy:app' # duplicate the entire src folder for manipulation
+  - 'cleanall'
+
+  - 'copy:app'
 
   - 'useminPrepare:multi'
   - 'concat:generated'
@@ -38,16 +26,36 @@ build:
   - 'htmlmin:multi'
   
   - 'copy:dist'
-  - 'inline' # inject css into html 
+  - 'inline' # optional inject css into html 
+
+  # - 'locales:update'
+
+  # - 'deploy2gh_version'
+  # - 'deploy2gh'
+
   - 'clean:tmp'
+
+
+
+deploy2gh:
+  - 'gh-pages:gh-pages'
+
+
+deploy2gh_version:
+  - 'copy:ver'
+  - 'create_index' 
+  - 'gh-pages:changelog'
+
+
 
 
 other_tasks:
   - 'fetchJson:fetchSomeApi'
+
   - 'ngtemplates'
   - 'ngAnnotate'
+  
   - 'svgstore:dist'
-  - 'filerev:dist'
   - 'CsvToL10nJson:dist'
   - 'inlinecss' # this inline each css rune in html tag (perfect for newsletter)
 

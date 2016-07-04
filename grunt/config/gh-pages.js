@@ -13,7 +13,6 @@ module.exports = function (grunt, options) {
     },
     'changelog': {
       options: {
-        base: options.folders.app,
         add:true
       },
       src: ['**']
