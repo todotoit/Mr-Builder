@@ -3,11 +3,6 @@ dev:
   - 'browserSync:dev'
 
 
-# meta task to clean up before build process
-cleanall:
-  - 'clean:tmp'
-  - 'clean:dist'
-
 
 # complete chain to build a static multi pages website
 build:
@@ -22,6 +17,7 @@ build:
   - 'cssmin:generated'
   - 'usemin'
 
+  - 'svgmin'
   - 'processhtml:multi'
   - 'htmlmin:multi'
   
@@ -37,16 +33,23 @@ build:
 
 
 
-deploy2gh:
+
+# meta-tasks ------
+# -----------------
+
+cleanall: # prepare for build process
+  - 'clean:tmp'
+  - 'clean:dist'
+
+deploy2gh: # replace the whole build with the new one
   - 'gh-pages:gh-pages'
 
-
-deploy2gh_version:
+deploy2gh_version: # adds the current build using the pkg version as folder name
   - 'copy:ver'
   - 'create_index' 
   - 'gh-pages:changelog'
 
-
+# -----------------
 
 
 other_tasks:
@@ -54,6 +57,9 @@ other_tasks:
 
   - 'ngtemplates'
   - 'ngAnnotate'
+
+  - 'load_stub'
+  - 'static_player:bake'
   
   - 'svgstore:dist'
   - 'CsvToL10nJson:dist'
