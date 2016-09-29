@@ -18,6 +18,7 @@ build:
   - 'usemin'
 
   - 'svgmin'
+  - 'static_player:bake'
   - 'processhtml:multi'
   - 'htmlmin:multi'
   
@@ -34,8 +35,15 @@ build:
 
 
 
+
 # meta-tasks ------
 # -----------------
+
+staging:
+  - 'shell:deploy_fb_staging'
+
+production:
+  - 'shell:deploy_fb_production'
 
 cleanall: # prepare for build process
   - 'clean:tmp'
