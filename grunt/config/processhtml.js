@@ -11,7 +11,7 @@ module.exports = function (grunt, options) {
       commentMarker: 'process',
       recursive:true,
       data:options,
-      includeBase: options.folders.dist
+      includeBase: options.folders.app
     },
     single:{
       dest: path.join(options.folders.app, 'index.html'),
