@@ -34,7 +34,7 @@ module.exports = function (grunt, options) {
         {
           expand: true,
           cwd: options.folders.app,
-          src:  ['*.html', '**/*.html', '!vendor/**/*.html'],
+          src:  ['*.html', '**/*.html', '!node_modules'],
           dest: options.folders.dist
         },
         {
@@ -46,7 +46,7 @@ module.exports = function (grunt, options) {
         {
           expand: true,
           cwd: options.folders.app,
-          src:  path.join('assets', 'fonts', '*'),
+          src:  path.join('assets', '*'),
           dest: path.join(options.folders.dist)
         }
       ]
