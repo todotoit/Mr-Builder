@@ -22,9 +22,9 @@ module.exports = function (grunt, options) {
         files: [
         	{
 		        expand: true,
-		        cwd: 'tests/',
-		        src: ['*.svg'],
-		        dest: options.folders.dist
+		        cwd: options.folders.app,
+		        src: ['**/*.svg'],
+		        dest: options.folders.app
 		    }
         ]
     }

@@ -1,9 +1,8 @@
-'use strict';
+'use strict'
 
-var path = require('path');
+var path = require('path')
 
 module.exports = function (grunt, options) {
-
   // this is the grunt configuration object
   return {
 
@@ -11,15 +10,14 @@ module.exports = function (grunt, options) {
       dest: options.folders.dist
     },
 
-    multi:{
+    multi: {
       files: {
         src: [
           path.join(options.folders.app, '**/*.html'),
-          '!' + path.join(options.folders.app, 'vendor')
+          '!' + path.join(options.folders.app, 'node_modules/**/*.html')
         ]
       }
     }
- 
-  };
 
-};
+  }
+}
