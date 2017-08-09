@@ -1,29 +1,28 @@
-'use strict';
+'use strict'
 
-var path = require('path');
+var path = require('path')
 
 module.exports = function (grunt, options) {
-
   // this is the grunt configuration object
   return {
 
-    app:{
-      files:[
+    app: {
+      files: [
         {
           expand: true,
           cwd: options.folders.dev,
-          src: ['**/*'], 
-          dest: path.join(options.folders.app, '')
+          src: ['**/*'],
+          dest: options.folders.app
         }
       ]
     },
 
-    ver:{
-      files:[
+    ver: {
+      files: [
         {
           expand: true,
           cwd: options.folders.dist,
-          src: ['**/*'], 
+          src: ['**/*'],
           dest: path.join(options.folders.dist, options.version)
         }
       ]
@@ -34,24 +33,34 @@ module.exports = function (grunt, options) {
         {
           expand: true,
           cwd: options.folders.app,
-          src:  ['*.html', '**/*.html', '!node_modules/**/*'],
+          src: ['*.html', '**/*.html', '!node_modules/**/*'],
           dest: options.folders.dist
         },
         {
           expand: true,
           cwd: options.folders.app,
-          src:  path.join('assets', 'imgs', '*.{jpg,png,bmp,gif}'),
+          src: path.join('assets', '**/*'),
           dest: path.join(options.folders.dist)
         },
         {
           expand: true,
           cwd: options.folders.app,
-          src:  path.join('assets', '*'),
+          src: '*.js',
           dest: path.join(options.folders.dist)
         }
       ]
     },
 
-  };
+    pub: {
+      files: [
+        {
+          expand: true,
+          cwd: options.folders.dist,
+          src: ['**/*'],
+          dest: options.folders.pub
+        }
+      ]
+    }
 
-};
+  }
+}

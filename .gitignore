@@ -31,3 +31,5 @@ nbproject
 tmp/
 ignore
 *.app
+
+.last.json

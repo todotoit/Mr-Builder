@@ -7,6 +7,24 @@ var path = require('path')
 // https://github.com/shootaroo/jit-grunt
 
 module.exports = function (grunt) {
+  grunt.log.writeln('Mr. Builder here at your service:')
+
+  var on_app = grunt.option('app') // i.e. grunt build --path=app_name
+
+  if (!on_app) {
+    try {
+      var last = grunt.file.readJSON(path.join(__dirname, '.last.json'))
+      on_app = last.path
+    } catch (e) {
+      grunt.log.error('You need to specify the project path the first time, as --app=path/to/my/folder')
+      process.exit()
+    }
+  }
+
+  grunt.log.writeln('project path', on_app)
+
+  grunt.file.write(path.join(__dirname, '.last.json'), JSON.stringify({path: on_app}))
+
   //
   // Grunt utilities
   //
@@ -36,11 +54,23 @@ module.exports = function (grunt) {
   if (!on_env) on_env = 'default'
 
   var whichEnv
+  var config = {
+    dist: 'public'
+  }
 
   try {
-    var env = grunt.file.readJSON(path.join(__dirname, 'env.json'))
+    var env = grunt.file.readJSON(path.join(on_app, '/app/env.json'))
     whichEnv = (env) ? env[on_env] : null
+    config = env.config
   } catch (e) {
+  }
+  console.log(config)
+
+  var localPkg
+  try {
+    localPkg = grunt.file.readJSON(path.join(on_app, '/app/package.json'))
+  } catch (e) {
+    localPkg = pkg
   }
 
   //
@@ -51,16 +81,18 @@ module.exports = function (grunt) {
     // choose type of application; enable and disable specific tasks
     type: 'default',
 
-    version: pkg.version,
+    version: localPkg.version,
+    pkg: localPkg,
     env: whichEnv,
+    config: config,
 
     folders: {
-      dev: 'app',
-      app: '.app',
-      dist: 'public',
-      resources: 'resources',
-      tmp: '.tmp',
-      grn: '.grunt'
+      dev: path.join(on_app, '/app'),
+      pub: path.join(on_app, '/' + config.dist),
+      dist: path.join(__dirname, '/' + config.dist),
+      app: path.join(__dirname, '/.app'),
+      tmp: path.join(__dirname, '/.tmp'),
+      grn: path.join(__dirname, '/.grunt')
     },
     rootPath: process.cwd()
   }

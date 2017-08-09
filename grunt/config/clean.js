@@ -9,7 +9,10 @@ module.exports = function (grunt, options) {
     // this is the grunt configuration object
   return {
 
-    dist: [pubyes, pubno],
+    options: {
+      force: false // set to true to delete fonders outside the current, dangerous, dont
+    },
+    dist: [options.folders.dist],
     tmp: [options.folders.tmp, options.folders.app, options.folders.grn]
 
   }

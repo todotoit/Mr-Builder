@@ -2,6 +2,23 @@
 
 [TODO](http://todo.to.it) Collection of Grunt tasks and scripts to work with Frontend app with happyness.
 
+###Briefly
+
+- You need a project folder with the mandatory `app` folder in it.
+- In `app` there'll be all the source project files
+- `package.json` file is mandatory
+- `env.json` file is mandatory
+- `grunt dev` and `grunt build` require the `--app=path/to/project` at least the first time
+- At least one `html` file need to be present with the `build:css` and `build:js` tags
+- Use the boilerplate as starting point
+- Run the builder with `grunt build --app=<full_path_to_project_folder>`
+
+
+
+
+---
+# OLD
+
 
 # Setting up your project repository based on Mr-Builder
 
@@ -12,6 +29,8 @@
 - ```git add -A``` and ```git commit -m "first commit"```
 - ```git remote add origin <YourNewGithubRepositoryUrl>```
 - Push the repo ```git push```
+
+
 
 
 # Setting up the development

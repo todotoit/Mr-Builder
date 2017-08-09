@@ -6,7 +6,6 @@ dev:
 
 # complete chain to build a static multi pages website
 build:
-  - 'cleanall'
 
   - 'copy:app'
 
@@ -23,14 +22,17 @@ build:
   - 'htmlmin:multi'
   
   - 'copy:dist'
+  - 'uglify:inroot'
   - 'inline' # optional inject css into html 
 
   # - 'locales:update'
 
   # - 'deploy2gh_version'
   # - 'deploy2gh'
-
+  
+  - 'copy:pub'
   - 'clean:tmp'
+  - 'clean:dist'
 
 
 

@@ -4,6 +4,7 @@ var path = require('path')
 
 module.exports = function (grunt, options) {
   var version = options.version
+  var config = options.config
 
     // this is the grunt configuration object
   return {
@@ -12,8 +13,14 @@ module.exports = function (grunt, options) {
     options: {
       blockReplacements: {
         js: function (block) {
-                // return '<script type="text/javascript" src="'+(block.dest + '?v='+version+'"></script>';
-          return ''
+          if (config.async_bundle) {
+            return `<script type="text/javascript">
+                    function _l(a,b){var c=new XMLHttpRequest,d=document;c.open("GET",a,!0),c.onload=function(){var a=d.createElement("script");a.type="text/javascript",a.textContent=c.responseText,d.body.appendChild(a),b&&b()},c.send()}
+                    _l('${block.dest}?v=${version}');
+                    </script>`
+          } else {
+            return `<script type="text/javascript" src="${block.dest}?v=${version}"></script>`
+          }
         },
         css: function (block) {
           var dest = block.dest.split('/')
