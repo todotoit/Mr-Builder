@@ -14,6 +14,10 @@
 - Run the builder with `grunt build --app=<full_path_to_project_folder>`
 
 
+### override
+
+- create `grunt/config` folder in project folder to put updated or new configs and to put new aliases.yml
+- create `grunt/tasks` folder in project folder to put updated or new custom task
 
 
 ---
