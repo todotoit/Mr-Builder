@@ -2,7 +2,9 @@
 dev:
   - 'browserSync:dev'
 
-
+test:
+  - 'copy:app'
+  - 'string-replace:ga'
 
 # complete chain to build a static multi pages website
 build:
@@ -15,6 +17,8 @@ build:
   - 'uglify:generated'
   - 'cssmin:generated'
   - 'usemin'
+
+  - 'string-replace:ga'
 
   - 'svgmin'
   - 'static_player:bake'
