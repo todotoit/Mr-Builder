@@ -24,7 +24,7 @@ module.exports = function (grunt, options) {
       files: [{
         expand: true,
         cwd: options.folders.dist,
-        src: ['*.js', '*.min.js'],
+        src: ['*.js', '!*.min.js'],
         dest: options.folders.dist
       }]
     }
