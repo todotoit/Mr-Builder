@@ -1,9 +1,8 @@
 {
   "name": "mr-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Grunt task collection to work with static website with happyness",
-  "scripts": {
-  },
+  "scripts": {},
   "config": {},
   "repository": {
     "type": "git",
