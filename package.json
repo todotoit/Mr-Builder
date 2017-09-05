@@ -1,6 +1,6 @@
 {
   "name": "mr-builder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Grunt task collection to work with static website with happyness",
   "scripts": {},
   "config": {},
