@@ -1,26 +1,19 @@
-# Local Configuration
-# app/config.js
-
-# auto generated files
-app/locales/*.json
-
-# Dependencies
 node_modules
-app/vendor
 
-# Public distribution folder
 public/
+docs/
+app/
 
-# Temporary build folder
 .tmp/
+.app
+.docs
+.public
 .sass-cache
 .grunt
 tests
 
-# NodeJS & Npm
 npm-debug.log
 
-# Miscellaneous
 *~
 *#
 .DS_STORE

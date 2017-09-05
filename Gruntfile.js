@@ -7,7 +7,9 @@ var path = require('path')
 module.exports = function (grunt) {
   grunt.log.writeln('Mr. Builder here at your service:')
 
-  var on_app = grunt.option('app') // i.e. grunt build --path=app_name
+  var on_app = grunt.option('app') // i.e. grunt build --app=app_name
+
+  if (on_app === '.') on_app = __dirname
 
   if (!on_app) {
     try {
@@ -81,7 +83,7 @@ module.exports = function (grunt) {
     folders: {
       dev: path.join(on_app, '/app'),
       pub: path.join(on_app, '/' + config.dist),
-      dist: path.join(__dirname, '/' + config.dist),
+      dist: path.join(__dirname, '/.' + config.dist),
       app: path.join(__dirname, '/.app'),
       tmp: path.join(__dirname, '/.tmp'),
       grn: path.join(__dirname, '/.grunt')
