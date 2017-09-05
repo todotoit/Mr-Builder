@@ -9,6 +9,8 @@ module.exports = function (grunt) {
 
   var on_app = grunt.option('app') // i.e. grunt build --app=app_name
 
+  var no_override = grunt.option('nover') // i.e. grunt build --nover
+
   if (on_app === '.') on_app = __dirname
 
   if (!on_app) {
@@ -94,6 +96,11 @@ module.exports = function (grunt) {
   // override appData with package.json config values
   var configs = pkg.config
   appData = _.defaultsDeep({}, configs, appData)
+
+  if (no_override) {
+    projectTaskPath = ''
+    projectConfigPath = ''
+  }
 
   // execute register-grunt-tasks
   registerGruntTasks(grunt, {
