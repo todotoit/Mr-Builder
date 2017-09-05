@@ -21,3 +21,13 @@
 - create `grunt/tasks` folder in project folder to put updated or new custom task
 
 PS: using --nover will skip the above override setting as well
+
+
+### env.json
+
+This file is for custom config related to specific project requirements. The object `config` can have the following keys:
+
+`dist`: the folder name for the built files
+`async_bundle`: boolean to load the bundled js in async or with regular script tag
+`firebase_disabled`: to backup specific firebase db on each build, progressively. It needs `name` for file name and `root` the full api url that point to the desired branch of the json db
+`contentful`: dump as json a specific content type in Contentful. It needs `token`, `space` and `type` in order to work properly. Currently only one dump.

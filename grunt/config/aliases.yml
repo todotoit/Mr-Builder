@@ -2,14 +2,12 @@
 dev:
   - 'browserSync:dev'
 
-test:
-  - 'copy:app'
-  - 'string-replace:ga'
 
 # complete chain to build a static multi pages website
 build:
 
   - 'copy:app'
+  - 'fetchJson'
 
   - 'useminPrepare:multi'
   - 'concat:generated'

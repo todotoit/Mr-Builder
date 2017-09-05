@@ -9,30 +9,15 @@ module.exports = function (grunt, options) {
   var folders = options.folders
   var config = options.config
 
-  var date = moment().toISOString().replace(/:/g, '-').split('.')
-  var key = config.fbroot // key in config file
-  var pat = `fbbk/${date[0]}_${key}.json`
-  var files = {}
-  files[pat] = `https://${config.fbid}.firebaseio.com/${key}.json` // id in firebase project
+  var res = {}
 
-  return {
-
-    fetchSomeApi: {
-      options: {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        parameters: {
-          access_token: 'xxxxxxx'
-        }
-      },
-      files: {
-        'path/to/file.json': url
-      }
-    },
-    fbackup: {
+  var fb = config.firebase
+  if (fb) {
+    var date = moment().toISOString().replace(/:/g, '-').split('.')
+    var pat = path.join(folders.dev, `firebase_backup/${date[0]}_${fb.name}.json`)
+    var files = {}
+    files[pat] = fb.root
+    res.fbackup = {
       options: {
         method: 'GET',
         headers: {
@@ -42,6 +27,28 @@ module.exports = function (grunt, options) {
       },
       files: files
     }
-
   }
+
+  var cont = config.contentful
+  if (cont) {
+    var contentPath = path.join(folders.app, `json/${cont.type}.json`)
+    var contentOb = {}
+    contentOb[contentPath] = `https://cdn.contentful.com/spaces/${cont.space}/entries`
+    res.contentful = {
+      options: {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        parameters: {
+          access_token: cont.token,
+          content_type: cont.type
+        }
+      },
+      files: contentOb
+    }
+  }
+
+  return res
 }
