@@ -44,6 +44,12 @@ module.exports = function (grunt, options) {
         },
         {
           expand: true,
+          cwd: path.join(options.folders.app, 'css'),
+          src: path.join('assets', '**/*'),
+          dest: path.join(options.folders.dist)
+        },
+        {
+          expand: true,
           cwd: options.folders.app,
           src: '*.js',
           dest: path.join(options.folders.dist)
