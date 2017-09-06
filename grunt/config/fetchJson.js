@@ -9,7 +9,7 @@ module.exports = function (grunt, options) {
   var folders = options.folders
   var config = options.config
 
-  var res = {}
+  var res = {default: {}}
 
   var fb = config.firebase
   if (fb) {
