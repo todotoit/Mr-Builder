@@ -15,6 +15,14 @@
 - If you have a copy of Mr Builder in project folder (for remote building purpose), to avoid conflict, pass --nover as additional argument
 
 
+### GH-Pages
+
+Make sure to set in `env.json` the `config.repo` prop with the full repository url, then run:
+
+	grunt deploy2gh
+	
+
+
 ### override
 
 - create `grunt/config` folder in project folder to put updated or new configs and to put new aliases.yml
@@ -28,6 +36,7 @@ PS: using --nover will skip the above override setting as well
 This file is for custom config related to specific project requirements. The object `config` can have the following keys:
 
 - `dist`: the folder name for the built files
+- `repo`: the full repository url to use `deploy2gh` task
 - `async_bundle`: boolean to load the bundled js in async or with regular script tag
 - `firebase_disabled`: to backup specific firebase db on each build, progressively. It needs `name` for file name and `root` the full api url that point to the desired branch of the json db
 - `contentful`: dump as json a specific content type in Contentful. It needs `token`, `space` and `type` in order to work properly. Currently only one dump.
