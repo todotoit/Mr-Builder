@@ -1,36 +1,29 @@
-'use strict';
+'use strict'
 
-var path = require('path');
+var path = require('path')
 
 module.exports = function (grunt, options) {
+  var config = options.config
 
-  // this is the grunt configuration object
   return {
 
     options: {
-      base: options.folders.dist,
+      base: options.folders.pub,
       message: 'Git-Pages Deploy'
     },
     'changelog': {
       options: {
-        add:true
+        add: true
       },
       src: ['**']
     },
     'gh-pages': {
       options: {
-      },
-      src: ['**']
-    },
-    'other-staging': {
-      options: {
         branch: 'gh-pages',
-        repo: 'https://example.com/other/repo.git'
+        repo: config.repo
       },
       src: ['**']
     }
 
-
-  };
-
-};
+  }
+}

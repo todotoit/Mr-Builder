@@ -38,7 +38,12 @@ build:
 
 
 
+deploy2gh: # replace the whole build with the new one
+  - 'gh-pages-clean'
+  - 'gh-pages:gh-pages'
 
+
+  
 
 # meta-tasks ------
 # -----------------
@@ -53,8 +58,7 @@ cleanall: # prepare for build process
   - 'clean:tmp'
   - 'clean:dist'
 
-deploy2gh: # replace the whole build with the new one
-  - 'gh-pages:gh-pages'
+
 
 deploy2gh_version: # adds the current build using the pkg version as folder name
   - 'copy:ver'
